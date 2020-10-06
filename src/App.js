@@ -24,7 +24,7 @@ function App() {
       <h1>Movie Search App</h1>
       <p>
         Simple movie search app that uses <a href='https://themoviedb.org'>TMDB</a> api to search for movies and tv
-        shows and lists them in a grid.
+        shows, and lists them in a grid.
       </p>
       <Search />
     </AppContainer>
