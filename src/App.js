@@ -41,12 +41,14 @@ const SearchContainer = styled.section`
 
   @media screen and (min-width: 768px) {
     form {
-      width: 50%;
+      width: 500px;
     }
   }
 
   form input {
     padding: 0.5rem 0.25rem;
+    min-width: 0;
+
     flex-grow: 1;
 
     background: none;
@@ -105,11 +107,7 @@ function Search() {
   return (
     <SearchContainer>
       <form onSubmit={searchQuery}>
-        <input
-          value={queryValue}
-          onChange={(e) => setQueryValue(e.target.value)}
-          placeholder='Search for movie or tv show...'
-        />
+        <input value={queryValue} onChange={(e) => setQueryValue(e.target.value)} placeholder='Movie title...' />
 
         <button type='submit' disabled={!queryValue}>
           <IcoFont icon='search' />
@@ -136,14 +134,16 @@ const MovieCardContainer = styled.article`
 
   cursor: pointer;
 
-  &:nth-child(1) {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
+  @media screen and (min-width: 920px) {
+    &:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
 
-  &:nth-child(4n) {
-    grid-column: span 2;
-    grid-row: span 2;
+    &:nth-child(4n) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
   }
 
   img {
