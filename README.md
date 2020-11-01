@@ -1,6 +1,6 @@
 # React Movie Search Demo
 
-[Live demo](https://bblk.pl/demos/react-movie-search-demo)
+[Live demo](https://bblk.pl/demos/react-movie-search-demo/live)
 
 Static movie search app demo, made with react and hosted on github pages.
 
