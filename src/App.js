@@ -23,8 +23,9 @@ function App() {
     <AppContainer>
       <h1>Movie Search App</h1>
       <p>
-        Simple movie search app that uses <a href='https://themoviedb.org'>TMDB</a> api to search for movies and tv
-        shows, and lists them in a grid.
+        Simple movie search app that uses{' '}
+        <a href='https://themoviedb.org'>TMDB</a> api to search for movies and
+        tv shows, and lists them in a grid.
       </p>
       <Search />
     </AppContainer>
@@ -107,7 +108,11 @@ function Search() {
   return (
     <SearchContainer>
       <form onSubmit={searchQuery}>
-        <input value={queryValue} onChange={(e) => setQueryValue(e.target.value)} placeholder='Movie title...' />
+        <input
+          value={queryValue}
+          onChange={(e) => setQueryValue(e.target.value)}
+          placeholder='Title...'
+        />
 
         <button type='submit' disabled={!queryValue}>
           <IcoFont icon='search' />
@@ -213,9 +218,17 @@ const MovieCardContainer = styled.article`
 function MovieCard(props) {
   return (
     <MovieCardContainer movie={props.movie}>
-      <img src={`https://image.tmdb.org/t/p/original${props.movie.poster_path}`} alt={`${props.movie.title} poster`} />
+      <img
+        src={`https://image.tmdb.org/t/p/original${props.movie.poster_path}`}
+        alt={`${props.movie.title} poster`}
+      />
       <section>
-        <h1>{props.movie.title || props.movie.originial_title || props.movie.name || props.movie.original_name}</h1>
+        <h1>
+          {props.movie.title ||
+            props.movie.originial_title ||
+            props.movie.name ||
+            props.movie.original_name}
+        </h1>
         <span>{props.movie.media_type}</span>
         <p>{props.movie.overview}</p>
       </section>
